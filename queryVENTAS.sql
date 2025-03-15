@@ -50,30 +50,30 @@ CREATE TABLE PAGOS (
     INDEX idx_pago_pedido (PedidoID)
 );
 
--- InserciÛn de datos
+-- Inserci√≥n de datos
 INSERT INTO CLIENTES (Nombre, CorreoElectronico, Telefono) VALUES 
-('Juan PÈrez', 'juan.perez@example.com', '70012345'),
-('MarÌa LÛpez', 'maria.lopez@example.com', '70123456'),
-('Carlos S·nchez', 'carlos.sanchez@example.com', '70234567'),
+('Juan P√©rez', 'juan.perez@example.com', '70012345'),
+('Mar√≠a L√≥pez', 'maria.lopez@example.com', '70123456'),
+('Carlos S√°nchez', 'carlos.sanchez@example.com', '70234567'),
 ('Ana Torres', 'ana.torres@example.com', '70345678'),
-('Pedro GÛmez', 'pedro.gomez@example.com', '70456789'),
-('Luis Fern·ndez', 'luis.fernandez@example.com', '70567890'),
-('SofÌa RamÌrez', 'sofia.ramirez@example.com', '70678901'),
+('Pedro G√≥mez', 'pedro.gomez@example.com', '70456789'),
+('Luis Fern√°ndez', 'luis.fernandez@example.com', '70567890'),
+('Sof√≠a Ram√≠rez', 'sofia.ramirez@example.com', '70678901'),
 ('Diego Castro', 'diego.castro@example.com', '70789012'),
 ('Paula Herrera', 'paula.herrera@example.com', '70890123'),
 ('Javier Molina', 'javier.molina@example.com', '70901234');
 
 INSERT INTO PRODUCTOS (NombreProducto, Descripcion, Precio, Stock) VALUES 
-('Laptop HP', 'Laptop HP de ˙ltima generaciÛn', 750.00, 10),
-('Mouse Logitech', 'Mouse inal·mbrico', 25.00, 50),
-('Teclado Mec·nico', 'Teclado RGB para gaming', 80.00, 30),
+('Laptop HP', 'Laptop HP de √∫ltima generaci√≥n', 750.00, 10),
+('Mouse Logitech', 'Mouse inal√°mbrico', 25.00, 50),
+('Teclado Mec√°nico', 'Teclado RGB para gaming', 80.00, 30),
 ('Monitor Samsung', 'Monitor 24 pulgadas Full HD', 180.00, 20),
-('Silla Gamer', 'Silla ergonÛmica para gaming', 250.00, 15),
-('Auriculares Sony', 'Auriculares con cancelaciÛn de ruido', 120.00, 25),
+('Silla Gamer', 'Silla ergon√≥mica para gaming', 250.00, 15),
+('Auriculares Sony', 'Auriculares con cancelaci√≥n de ruido', 120.00, 25),
 ('Impresora Epson', 'Impresora multifuncional', 300.00, 10),
 ('Tablet Samsung', 'Tablet de 10 pulgadas', 350.00, 12),
 ('Disco Duro Externo', '1TB de almacenamiento', 90.00, 20),
-('C·mara Web Logitech', 'C·mara Full HD para videollamadas', 60.00, 30);
+('C√°mara Web Logitech', 'C√°mara Full HD para videollamadas', 60.00, 30);
 
 INSERT INTO PEDIDOS (ClienteID,Estado, Total) VALUES 
 (100,'Pendiente', 100.00),
@@ -88,25 +88,25 @@ INSERT INTO PEDIDOS (ClienteID,Estado, Total) VALUES
 (101, 'Pendiente', 300.00);
 
 INSERT INTO DETALLE_VENTA (PedidoID, ProductID, Cantidad, PrecioUnitario) VALUES 
-(10024, 1, 2, 25.00),
-(10026, 4, 3, 80.00),
-(10028, 7, 1, 750.00),
-(10030, 10, 1, 180.00),
-(10032, 13, 1, 250.00),
-(10034, 16, 2, 120.00),
-(10036, 19, 1, 300.00),
-(10038, 22, 2, 350.00),
-(10040, 25, 3, 90.00),
-(10042, 28, 1, 60.00);
+(10000, 1, 2, 25.00),
+(10002, 4, 3, 80.00),
+(10004, 7, 1, 750.00),
+(10006, 10, 1, 180.00),
+(10008, 13, 1, 250.00),
+(10010, 16, 2, 120.00),
+(10012, 19, 1, 300.00),
+(10014, 22, 2, 350.00),
+(10016, 25, 3, 90.00),
+(10018, 28, 1, 60.00);
 
 INSERT INTO PAGOS (PedidoID, Monto, MetodoPago) VALUES 
-(10024, 100.00, 'Tarjeta'),
-(10026, 500.00, 'Efectivo'),
-(10028, 750.00, 'Transferencia'),
-(10030, 200.00, 'PayPal'),
-(10032, 400.00, 'Tarjeta'),
-(10034, 900.00, 'Efectivo'),
-(10036, 250.00, 'PayPal'),
-(10038, 600.00, 'Transferencia'),
-(10040, 150.00, 'Tarjeta'),
-(10042, 300.00, 'Efectivo');
+(10000, 100.00, 'Tarjeta'),
+(10002, 500.00, 'Efectivo'),
+(10004, 750.00, 'Transferencia'),
+(10006, 200.00, 'PayPal'),
+(10008, 400.00, 'Tarjeta'),
+(10010, 900.00, 'Efectivo'),
+(10012, 250.00, 'PayPal'),
+(10014, 600.00, 'Transferencia'),
+(10016, 150.00, 'Tarjeta'),
+(10018, 300.00, 'Efectivo');
