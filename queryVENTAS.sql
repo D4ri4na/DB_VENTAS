@@ -110,3 +110,31 @@ INSERT INTO PAGOS (PedidoID, Monto, MetodoPago) VALUES
 (10014, 600.00, 'Transferencia'),
 (10016, 150.00, 'Tarjeta'),
 (10018, 300.00, 'Efectivo');
+
+--Actualizar stock y registrar venta
+create trigger actualizar_stock
+on DETALLE_VENTA
+after insert
+as
+begin
+	update PRODUCTOS
+	set Stock = Stock - (select Cantidad from inserted)
+	where ProductID in (select ProductID from inserted)
+end;
+
+
+Begin transaction
+insert into PEDIDOS(ClienteID , FechaPedido , Estado , Total)
+values(100 , GETDATE() , 'Pendiente' , 200)
+Insert into DETALLE_VENTA (ProductID ,PedidoID , Cantidad , PrecioUnitario)
+values(1 ,10020 , 2 , 70)
+if @@ERROR <> 0
+begin
+	Rollback
+	print 'Ocurrio un Error'
+	return
+end
+commit
+
+--obtener ventas por cliente
+exec DBO.ventasporcliente 101
